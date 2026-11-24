@@ -1,0 +1,167 @@
+<!-- Página principal de HealthCore: presenta la organización, sus servicios y cómo solicitar información. -->
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Metadatos básicos para caracteres, diseño adaptable, descripción en buscadores y título de la pestaña. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Conoce HealthCore, una red de clínicas de atención ambulatoria en Estados Unidos y Reino Unido.">
+    <meta name="theme-color" content="#ffffff">
+    <title>HealthCore | Atención ambulatoria accesible</title>
+    <!-- Tailwind interpreta las clases de utilidad usadas más abajo para dar estilo a la página. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Datos estructurados: describen la organización a buscadores usando información empresarial confirmada. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "HealthCore",
+        "description": "Empresa sanitaria de atención ambulatoria que ofrece atención primaria, consultas con especialistas, gestión de enfermedades crónicas y programas de salud preventiva.",
+        "foundingDate": "2011",
+        "areaServed": [
+          { "@type": "Country", "name": "United States" },
+          { "@type": "Country", "name": "United Kingdom" }
+        ],
+        "knowsAbout": [
+          "Atención primaria",
+          "Consultas con especialistas",
+          "Gestión de enfermedades crónicas",
+          "Salud preventiva"
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-slate-50 font-sans text-slate-800 antialiased">
+    <!-- Facilita a quien navega con teclado saltarse el menú y llegar al contenido principal. -->
+    <a class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:text-teal-800 focus:shadow-lg" href="#contenido">Saltar al contenido</a>
+    <!-- Cabecera persistente con la marca y navegación principal; los enlaces de secciones se ocultan en pantallas pequeñas. -->
+    <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
+        <a class="flex items-center gap-3 rounded-lg text-xl font-bold tracking-tight text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2" href="./index.html" aria-label="HealthCore, inicio">
+          <span class="grid size-10 place-items-center rounded-xl bg-teal-800 text-lg text-white" aria-hidden="true">H</span>
+          <span>HealthCore IVD</span>
+        </a>
+        <nav aria-label="Navegación principal">
+          <ul class="flex items-center gap-4 sm:gap-8">
+            <li class="hidden sm:block"><a class="text-sm font-semibold text-slate-700 hover:text-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-700" href="#servicios">Servicios</a></li>
+            <li class="hidden sm:block"><a class="text-sm font-semibold text-slate-700 hover:text-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-700" href="#por-que-healthcore">Por qué HealthCore</a></li>
+            <li><a class="inline-flex min-h-11 items-center justify-center rounded-full bg-teal-800 px-5 text-sm font-bold text-white shadow-sm hover:bg-teal-900 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2" href="./application.html">Solicitar información</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- main marca el contenido único de la página y es el destino del enlace para saltar el menú. -->
+    <main id="contenido">
+      <!-- Hero: resume la propuesta de valor y ofrece accesos rápidos al formulario y a servicios. -->
+      <section class="relative isolate overflow-hidden bg-slate-950" aria-labelledby="hero-title">
+        <div class="absolute inset-0 -z-10 bg-gradient-to-br from-teal-950 via-slate-950 to-slate-900" aria-hidden="true"></div>
+        <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1.2fr_0.8fr] lg:py-32">
+          <div class="max-w-3xl">
+            <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-teal-300/30 bg-teal-300/10 px-4 py-2 text-sm font-semibold text-teal-100"><span class="size-2 rounded-full bg-teal-300" aria-hidden="true"></span>Atención ambulatoria en EE. UU. y Reino Unido</p>
+            <h1 id="hero-title" class="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">Atención sanitaria cercana, <span class="text-teal-300">centrada en ti.</span></h1>
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">HealthCore conecta a las personas para una atención médica accesible: desde atención primaria hasta investigación, pasando por prevención y consultas con especialistas.</p>
+            <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+              <a class="inline-flex min-h-12 items-center justify-center rounded-full bg-teal-400 px-7 font-bold text-slate-950 hover:bg-teal-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-950" href="./application.html">Solicitar información <span class="ml-2" aria-hidden="true">→</span></a>
+              <a class="inline-flex min-h-12 items-center justify-center rounded-full border border-slate-500 px-7 font-semibold text-white hover:border-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white" href="#servicios">Conocer nuestros servicios</a>
+            </div>
+          </div>
+          <aside class="rounded-3xl border border-white/15 bg-white/5 p-7 shadow-2xl backdrop-blur sm:p-9" aria-label="HealthCore en cifras">
+            <p class="text-sm font-bold uppercase tracking-[0.18em] text-teal-300">Una red con experiencia</p>
+            <p class="mt-5 text-6xl font-bold tracking-tight text-white">12</p>
+            <p class="mt-1 text-lg text-slate-300">clínicas en dos países</p>
+            <div class="my-7 h-px bg-white/15" aria-hidden="true"></div>
+            <p class="text-slate-200">Fundada en 2011, HealthCore trabaja para que acceder a atención de calidad sea una experiencia más clara y cercana.</p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Catálogo resumido de servicios; el id permite llegar aquí desde los enlaces de navegación. -->
+      <section id="servicios" class="mx-auto max-w-7xl scroll-mt-24 px-5 py-20 sm:px-8 sm:py-24" aria-labelledby="services-title">
+        <div class="max-w-2xl">
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-teal-800">Nuestros servicios</p>
+          <h2 id="services-title" class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Atención para cada etapa de tu salud</h2>
+          <p class="mt-4 text-lg leading-7 text-slate-600">Un equipo médico con servicios que ayudan a acompañar las necesidades de salud cotidianas y continuas. Un equipo que apuesta por la investigación para dar lo mejor a sus pacientes.</p>
+        </div>
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <span class="grid size-12 place-items-center rounded-xl bg-teal-50 text-xl text-teal-800" aria-hidden="true">✚</span>
+            <h3 class="mt-5 text-lg font-bold text-slate-900">Atención primaria</h3>
+            <p class="mt-2 leading-6 text-slate-600">Atención para necesidades generales de salud ambulatoria.</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <span class="grid size-12 place-items-center rounded-xl bg-sky-50 text-xl text-sky-800" aria-hidden="true">⌕</span>
+            <h3 class="mt-5 text-lg font-bold text-slate-900">Consultas con especialistas</h3>
+            <p class="mt-2 leading-6 text-slate-600">Acceso a consultas especializadas dentro de nuestra red.</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <span class="grid size-12 place-items-center rounded-xl bg-amber-50 text-xl text-amber-800" aria-hidden="true">♡</span>
+            <h3 class="mt-5 text-lg font-bold text-slate-900">Gestión de enfermedades crónicas</h3>
+            <p class="mt-2 leading-6 text-slate-600">Atención ambulatoria para el seguimiento de condiciones crónicas.</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+            <span class="grid size-12 place-items-center rounded-xl bg-violet-50 text-xl text-violet-800" aria-hidden="true">＋</span>
+            <h3 class="mt-5 text-lg font-bold text-slate-900">Salud preventiva + Investigación y desarrollo</h3>
+            <p class="mt-2 leading-6 text-slate-600">Programas que ponen el foco en el cuidado preventivo.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Sección de diferenciadores y presencia geográfica, organizada en artículos para cada tema. -->
+      <section id="por-que-healthcore" class="bg-white py-20 sm:py-24" aria-labelledby="why-title">
+        <div class="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:items-center">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-[0.18em] text-teal-800">Por qué HealthCore</p>
+            <h2 id="why-title" class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">La experiencia sanitaria, con menos fricción</h2>
+            <p class="mt-5 text-lg leading-8 text-slate-600">Desde 2011, HealthCore ha crecido alrededor de una idea: la atención de calidad debe ser accesible y fácil de navegar.</p>
+            <a class="mt-7 inline-flex min-h-11 items-center font-bold text-teal-800 underline decoration-teal-300 decoration-2 underline-offset-4 hover:text-teal-950 focus:outline-none focus:ring-2 focus:ring-teal-700" href="./application.html">Conoce cómo contactar con nosotros <span class="ml-2" aria-hidden="true">→</span></a>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <article class="rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200">
+              <p class="text-3xl font-bold text-teal-800" aria-hidden="true">01</p>
+              <h3 class="mt-4 text-lg font-bold text-slate-900">Citas en el mismo día</h3>
+              <p class="mt-2 leading-6 text-slate-600">Una de las señas de identidad de HealthCore, sujeta a disponibilidad de cada clínica.</p>
+            </article>
+            <article class="rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200">
+              <p class="text-3xl font-bold text-teal-800" aria-hidden="true">02</p>
+              <h3 class="mt-4 text-lg font-bold text-slate-900">Horarios ampliados</h3>
+              <p class="mt-2 leading-6 text-slate-600">Opciones de horario ampliado como parte del enfoque de acceso de la red.</p>
+            </article>
+            <article class="rounded-2xl bg-slate-50 p-6 ring-1 ring-slate-200 sm:col-span-2">
+              <p class="text-3xl font-bold text-teal-800" aria-hidden="true">03</p>
+              <h3 class="mt-4 text-lg font-bold text-slate-900">Presencia en dos mercados</h3>
+              <p class="mt-2 leading-6 text-slate-600">Nueve clínicas en Texas, Florida y Georgia, y tres en Londres y Mánchester. En los mercados estadounidenses, HealthCore cuenta con personal bilingüe.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Llamada final a la acción que dirige al formulario, sin publicar datos de contacto no confirmados. -->
+      <section class="px-5 py-20 sm:px-8 sm:py-24" aria-labelledby="contact-title">
+        <div class="mx-auto max-w-5xl overflow-hidden rounded-3xl bg-teal-900 px-7 py-12 text-center shadow-xl sm:px-14 sm:py-16">
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-teal-200">Estamos aquí para orientarte</p>
+          <h2 id="contact-title" class="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">¿Quieres saber más sobre HealthCore?</h2>
+          <p class="mx-auto mt-4 max-w-2xl text-lg leading-7 text-teal-50">Cuéntanos qué servicio te interesa. Utiliza nuestro formulario para solicitar información; no incluyas detalles médicos.</p>
+          <a class="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-7 font-bold text-teal-900 hover:bg-teal-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-teal-900" href="./application.html">Ir al formulario <span class="ml-2" aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de página con resumen de la organización y accesos repetidos a las secciones importantes. -->
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-8 sm:px-8 md:flex-row md:items-center md:justify-between">
+        <div>
+          <a class="text-lg font-bold text-slate-900" href="./index.html">HealthCore</a>
+          <p class="mt-1 text-sm text-slate-600">Atención ambulatoria en Estados Unidos y Reino Unido.</p>
+        </div>
+        <nav aria-label="Enlaces del pie de página">
+          <ul class="flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-slate-700">
+            <li><a class="hover:text-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-700" href="#servicios">Servicios</a></li>
+            <li><a class="hover:text-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-700" href="#por-que-healthcore">Por qué HealthCore</a></li>
+            <li><a class="hover:text-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-700" href="./application.html">Solicitar información</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
