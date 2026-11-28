@@ -1,0 +1,132 @@
+<!-- Esta página muestra una solicitud de información; el formulario es una demostración local y no envía datos. -->
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Estos metadatos ayudan al navegador a interpretar los caracteres, adaptar la página a móviles y describirla en buscadores. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Solicita información general sobre los servicios ambulatorios de HealthCore.">
+    <meta name="theme-color" content="#f8fafc">
+    <title>Solicitar información | HealthCore</title>
+    <!-- Tailwind aporta las clases visuales utilizadas en los elementos HTML. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- defer carga la validación sin detener el análisis del HTML y la ejecuta cuando el documento ya está preparado. -->
+    <script src="./validation.js" defer></script>
+  </head>
+  <body class="min-h-screen bg-slate-50 font-sans text-slate-800 antialiased">
+    <!-- Enlace accesible que aparece al recibir foco y permite saltar directamente al contenido principal. -->
+    <a class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:text-teal-800 focus:shadow-lg" href="#contenido">Saltar al contenido</a>
+    <!-- El encabezado reúne la marca y los enlaces para moverse entre páginas y secciones. -->
+    <header class="border-b border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
+        <a class="rounded-lg text-xl font-bold tracking-tight text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2" href="./index.html" aria-label="HealthCore, volver al inicio">HealthCore</a>
+        <nav aria-label="Navegación principal">
+          <ul class="flex items-center gap-4 sm:gap-7">
+            <li><a class="text-sm font-semibold text-slate-700 hover:text-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-700" href="./index.html#servicios">Servicios</a></li>
+            <li><a class="inline-flex min-h-11 items-center rounded-full bg-teal-800 px-5 text-sm font-bold text-white hover:bg-teal-900 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2" href="./index.html">Inicio</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- main identifica el contenido principal y su id es el destino del enlace para saltar contenido. -->
+    <main id="contenido" class="mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-16 lg:py-20">
+      <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+        <!-- Esta sección explica el propósito del formulario y advierte que no se deben escribir datos médicos. -->
+        <section aria-labelledby="page-title" class="lg:pt-4">
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-teal-800">Estamos aquí para orientarte</p>
+          <h1 id="page-title" class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Solicitar información</h1>
+          <p class="mt-5 text-lg leading-8 text-slate-600">Cuéntanos cómo podemos ayudarte a conocer nuestros servicios ambulatorios. Este formulario es solo una demostración y no envía tu solicitud.</p>
+          <aside class="mt-7 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-950" aria-label="Aviso de privacidad">
+            <p class="font-bold">Importante: no incluyas información médica</p>
+            <p class="mt-1">No escribas síntomas, diagnósticos, tratamientos ni otros datos de salud en este formulario.</p>
+          </aside>
+          <p class="mt-6 text-sm text-slate-500"><span aria-hidden="true">*</span> indica un campo obligatorio.</p>
+        </section>
+
+        <!-- Sección del formulario: su título accesible se enlaza mediante aria-labelledby. -->
+        <section aria-labelledby="form-title" class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8 lg:p-10">
+          <h2 id="form-title" class="text-xl font-bold text-slate-950 sm:text-2xl">Cuéntanos qué información buscas</h2>
+          <p class="mt-2 text-sm leading-6 text-slate-600">Usaremos estos datos únicamente para simular la validación en esta página. No se guardan ni se transmiten.</p>
+          <!-- El id permite que validation.js encuentre el formulario; novalidate deja que el script muestre mensajes propios. -->
+          <form id="application-form" class="mt-8 space-y-8" novalidate>
+            <!-- fieldset y legend agrupan controles relacionados para lectores de pantalla. -->
+            <fieldset class="space-y-5">
+              <legend class="mb-4 text-base font-bold text-slate-900">Tus datos de contacto</legend>
+              <div class="grid gap-5 sm:grid-cols-2">
+                <div class="sm:col-span-2">
+                  <label class="block text-sm font-semibold text-slate-800" for="full-name">Nombre completo <span class="text-rose-700">*</span></label>
+                  <p id="full-name-hint" class="mt-1 text-sm text-slate-500">Introduce al menos 2 caracteres.</p>
+                  <!-- El label asociado por id nombra el campo; aria-describedby añade ayuda y el espacio donde aparecerá el error. -->
+                  <input class="mt-2 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 placeholder:text-slate-400 focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700/25 aria-[invalid=true]:border-rose-700 aria-[invalid=true]:focus:ring-rose-700/25" id="full-name" name="fullName" type="text" autocomplete="name" required minlength="2" aria-describedby="full-name-hint full-name-error">
+                  <p class="mt-1 min-h-5 text-sm text-rose-800" id="full-name-error" aria-live="polite"></p>
+                </div>
+                <div class="sm:col-span-2">
+                  <label class="block text-sm font-semibold text-slate-800" for="email">Correo electrónico <span class="text-rose-700">*</span></label>
+                  <p id="email-hint" class="mt-1 text-sm text-slate-500">Usa una dirección de correo con formato válido.</p>
+                  <!-- type=email permite aprovechar las comprobaciones de formato que ofrece el navegador. -->
+                  <input class="mt-2 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 placeholder:text-slate-400 focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700/25 aria-[invalid=true]:border-rose-700 aria-[invalid=true]:focus:ring-rose-700/25" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hint email-error">
+                  <p class="mt-1 min-h-5 text-sm text-rose-800" id="email-error" aria-live="polite"></p>
+                </div>
+                <div class="sm:col-span-2">
+                  <label class="block text-sm font-semibold text-slate-800" for="country">País de interés <span class="text-rose-700">*</span></label>
+                  <p id="country-hint" class="mt-1 text-sm text-slate-500">Selecciona el mercado sobre el que deseas información.</p>
+                  <!-- Las opciones tienen valores internos estables que validation.js compara con la lista permitida. -->
+                  <select class="mt-2 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700/25 aria-[invalid=true]:border-rose-700" id="country" name="country" required aria-describedby="country-hint country-error">
+                    <option value="">Selecciona una opción</option>
+                    <option value="us">Estados Unidos</option>
+                    <option value="uk">Reino Unido</option>
+                    <option value="other">Otro / no estoy seguro</option>
+                  </select>
+                  <p class="mt-1 min-h-5 text-sm text-rose-800" id="country-error" aria-live="polite"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Segundo grupo: categoría de interés y mensaje opcional, con indicación de no incluir datos clínicos. -->
+            <fieldset class="space-y-5 border-t border-slate-200 pt-6">
+              <legend class="mb-4 text-base font-bold text-slate-900">Tu consulta</legend>
+              <div>
+                <label class="block text-sm font-semibold text-slate-800" for="interest">¿Sobre qué servicio deseas información? <span class="text-rose-700">*</span></label>
+                <p id="interest-hint" class="mt-1 text-sm text-slate-500">Elige una categoría general; no compartas detalles clínicos.</p>
+                <select class="mt-2 min-h-12 w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700/25 aria-[invalid=true]:border-rose-700" id="interest" name="interest" required aria-describedby="interest-hint interest-error">
+                  <option value="">Selecciona una opción</option>
+                  <option value="primary-care">Atención primaria</option>
+                  <option value="specialists">Consultas con especialistas</option>
+                  <option value="chronic-care">Gestión de enfermedades crónicas</option>
+                  <option value="prevention">Salud preventiva</option>
+                  <option value="general">Consulta general</option>
+                </select>
+                <p class="mt-1 min-h-5 text-sm text-rose-800" id="interest-error" aria-live="polite"></p>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-slate-800" for="message">Mensaje <span class="font-normal text-slate-500">(opcional)</span></label>
+                <p id="message-hint" class="mt-1 text-sm text-slate-500">Máximo 500 caracteres. No incluyas información médica o de salud.</p>
+                <!-- maxlength limita la longitud desde el navegador; este campo no es obligatorio. -->
+                <textarea class="mt-2 min-h-32 w-full resize-y rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700/25 aria-[invalid=true]:border-rose-700" id="message" name="message" rows="5" maxlength="500" aria-describedby="message-hint message-error"></textarea>
+                <p class="mt-1 min-h-5 text-sm text-rose-800" id="message-error" aria-live="polite"></p>
+              </div>
+            </fieldset>
+
+            <div class="border-t border-slate-200 pt-6">
+              <!-- Esta región anuncia el resultado del envío a tecnologías de asistencia sin mover el foco. -->
+              <p id="form-status" class="mb-4 min-h-6 text-sm font-semibold text-teal-900" role="status" aria-live="polite" aria-atomic="true"></p>
+              <div class="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+                <button class="inline-flex min-h-12 items-center justify-center rounded-full border border-slate-300 px-6 font-bold text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2" type="reset">Limpiar formulario</button>
+                <button class="inline-flex min-h-12 items-center justify-center rounded-full bg-teal-800 px-7 font-bold text-white shadow-sm hover:bg-teal-900 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2" type="submit">Enviar solicitud</button>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <!-- El pie cierra la página con una descripción de la organización y un enlace de regreso. -->
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-7 text-sm text-slate-600 sm:px-8 md:flex-row md:items-center md:justify-between">
+        <p>HealthCore — Atención ambulatoria en Estados Unidos y Reino Unido.</p>
+        <a class="font-semibold text-teal-800 underline underline-offset-4 hover:text-teal-950 focus:outline-none focus:ring-2 focus:ring-teal-700" href="./index.html">Volver al inicio</a>
+      </div>
+    </footer>
+  </body>
+</html>
