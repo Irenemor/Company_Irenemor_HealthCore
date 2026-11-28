@@ -2,26 +2,49 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <!-- Metadatos básicos para caracteres, diseño adaptable, descripción en buscadores y título de la pestaña. -->
+    <!-- SEO/GEO: metadatos principales, presencia en buscadores y datos estructurados coherentes con el contenido público de la página. -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Conoce HealthCore, una red de clínicas de atención ambulatoria en Estados Unidos y Reino Unido.">
+    <meta name="description" content="HealthCore ofrece atención primaria, consultas con especialistas, gestión de enfermedades crónicas y salud preventiva en 12 clínicas de Estados Unidos y Reino Unido.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="HealthCore">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="en_GB">
+    <meta property="og:site_name" content="HealthCore">
+    <meta property="og:title" content="HealthCore | Atención ambulatoria accesible">
+    <meta property="og:description" content="Atención primaria, consultas con especialistas, gestión de enfermedades crónicas y salud preventiva en 12 clínicas de Estados Unidos y Reino Unido.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="HealthCore | Atención ambulatoria accesible">
+    <meta name="twitter:description" content="Atención sanitaria ambulatoria accesible en Estados Unidos y Reino Unido.">
     <meta name="theme-color" content="#ffffff">
-    <title>HealthCore | Atención ambulatoria accesible</title>
+    <title>HealthCore | Atención primaria y servicios ambulatorios en EE. UU. y Reino Unido</title>
     <!-- Tailwind interpreta las clases de utilidad usadas más abajo para dar estilo a la página. -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Datos estructurados: describen la organización a buscadores usando información empresarial confirmada. -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": ["MedicalOrganization", "Organization"],
         "name": "HealthCore",
         "description": "Empresa sanitaria de atención ambulatoria que ofrece atención primaria, consultas con especialistas, gestión de enfermedades crónicas y programas de salud preventiva.",
         "foundingDate": "2011",
         "areaServed": [
-          { "@type": "Country", "name": "United States" },
-          { "@type": "Country", "name": "United Kingdom" }
+          { "@type": "Country", "name": "Estados Unidos" },
+          { "@type": "Country", "name": "Reino Unido" },
+          { "@type": "AdministrativeArea", "name": "Texas" },
+          { "@type": "AdministrativeArea", "name": "Florida" },
+          { "@type": "AdministrativeArea", "name": "Georgia" },
+          { "@type": "AdministrativeArea", "name": "Londres" },
+          { "@type": "AdministrativeArea", "name": "Mánchester" }
         ],
+        "medicalSpecialty": [
+          "Atención primaria",
+          "Medicina preventiva",
+          "Atención ambulatoria"
+        ],
+        "availableLanguage": ["es", "en"],
         "knowsAbout": [
           "Atención primaria",
           "Consultas con especialistas",
